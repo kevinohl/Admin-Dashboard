@@ -1,4 +1,102 @@
-p {
-    color: pink;
-    background-color: black;
+body {
+    margin: 0;
+    padding: 0;
+    --accent-color: #F0B429;
+    --sidebar-color: #1992D4;
+    --sub-container-bg: #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Helvetica;
+}
+
+.main-container {
+    flex: auto;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+.header {
+    grid-column: 2;
+}
+
+.upper-header, .lower-header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.upper-header input {
+    width: 35vw;
+    height: 30px;
+    align-self: center;
+}
+
+.user-section {
+    display: flex;
+}
+
+.sidebar {
+    padding: 15px;
+    grid-column: 1;
+    grid-row: 1 / -1;
+    background-color: var(--sidebar-color);
+    color: white;
+}
+
+.sub-container {
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: var(--sub-container-bg);
+}
+
+.projects-section {
+    padding: 15px;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.project-card {
+    background-color: white;
+    padding: 15px;
+}
+
+.announcements-section {
+    padding: 15px;
+    grid-column: 2;
+}
+
+.announcements-container {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.announcement-card {
+    overflow-wrap: break-word;
+}
+
+.trending-section {
+    padding: 15px;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.trending-list {
+    background-color: white;
+}
+
+.title, .small-title, .section-heading {
+    font-weight: bold;
 }
