@@ -10,6 +10,15 @@ body {
     font-family: Helvetica;
 }
 
+a:link, a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: lightgrey;
+}
+
 .main-container {
     flex: auto;
     display: grid;
@@ -21,8 +30,30 @@ ul, li {
     list-style-type: none;
 }
 
+ul {
+    padding-left: 10px;
+}
+
+.sidebar li, .logo {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: start;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
 .header {
     grid-column: 2;
+    box-shadow: 2px 4px #dddddd;
+    position: relative;
+    z-index: 2;
+    padding: 0 2.5vw;
 }
 
 .upper-header, .lower-header {
@@ -36,8 +67,61 @@ ul, li {
     align-self: center;
 }
 
-.user-section {
+.upper-header, .user-section {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    border-radius: 40px;
+    border-style: none;
+    background-color: rgb(235, 235, 235);
+    padding-left: 15px;
+    
+}
+
+.user-section > * {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.upper-header svg {
+    fill: black;
+    scale: 70%;
+}
+
+.user-icon-small {
+    height: 45px;
+    border-radius: 50%;
+}
+
+.user-icon-big {
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.user-greeting {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+    white-space: pre-line;
+}
+
+.lower-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
 }
 
 .sidebar {
@@ -68,7 +152,8 @@ ul, li {
 
 .project-card {
     background-color: white;
-    padding: 15px;
+    padding: 20px;
+    background: linear-gradient(90deg, var(--accent-color) 2.5%, white 2.5%);
 }
 
 .announcements-section {
@@ -81,10 +166,22 @@ ul, li {
     display: flex;
     flex-direction: column;
     background-color: white;
+    width: max(100px, 15vw);
 }
 
 .announcement-card {
     overflow-wrap: break-word;
+}
+
+.announcement-card::after {
+    content: "";
+    width: 100%;
+    display: grid;
+    border-bottom: solid 1px lightgrey;
+}
+
+.announcement-card:last-child::after {
+    border-bottom: none;
 }
 
 .trending-section {
@@ -94,9 +191,64 @@ ul, li {
 }
 
 .trending-list {
+    padding: 15px;
     background-color: white;
+    width: max(100px, 15vw);
+}
+
+.trending-list li {
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .title, .small-title, .section-heading {
     font-weight: bold;
+}
+
+.section-heading {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.sidebar svg {
+    fill: white;
+    scale: 0.5;
+}
+
+.logo svg {
+    scale: 1;
+    padding-right: 10px;
+}
+
+.project-card, .announcements-container, .trending-list {
+    border-radius: 10px;
+    box-shadow: 2px 4px #dddddd;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* CSS */
+button {
+    background-color: var(--sidebar-color);
+    color: white;
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    border-style: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+button:hover {
+  box-shadow: 0px 4px #dddddd;
+  position: relative;
+  z-index: 5;
+  color: lightgrey;
+}
+
+button:active {
+    transform: translatey(2px);
 }
