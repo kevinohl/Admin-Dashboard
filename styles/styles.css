@@ -138,6 +138,7 @@ ul {
     display: grid;
     grid-template-columns: 2fr 1fr;
     background-color: var(--sub-container-bg);
+    padding: 0 2.5vw;
 }
 
 .projects-section {
